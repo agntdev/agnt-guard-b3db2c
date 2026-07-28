@@ -1,20 +1,7 @@
 [
-  {
-    "name": "I'm human",
-    "steps": [
-      {
-        "expect": [
-          {
-            "method": "sendMessage",
-            "payload": {
-              "text": "Verification button for new members"
-            }
-          }
-        ],
-        "send": {
-          "text": "/I'm"
-        }
-      }
-    ]
-  }
+  { "name": "verification button must be used in the joined group", "steps": [
+    { "send": { "callback": "verify:confirm" }, "expect": [
+      { "method": "sendMessage", "payload": { "text": "Open this button in the group you joined." } }
+    ] }
+  ] }
 ]

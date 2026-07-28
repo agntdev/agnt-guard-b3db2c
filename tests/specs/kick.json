@@ -1,20 +1,7 @@
 [
-  {
-    "name": "/kick",
-    "steps": [
-      {
-        "expect": [
-          {
-            "method": "sendMessage",
-            "payload": {
-              "text": "Kick user with reason"
-            }
-          }
-        ],
-        "send": {
-          "text": "/kick"
-        }
-      }
-    ]
-  }
+  { "name": "/kick requires a group admin", "steps": [
+    { "send": { "text": "/kick @member repeated links" }, "expect": [
+      { "method": "sendMessage", "payload": { "text": "This control is available to group admins only." } }
+    ] }
+  ] }
 ]

@@ -1,16 +1,7 @@
 [
-  {
-    "name": "/start replies with the welcome + main menu",
-    "steps": [
-      {
-        "send": { "text": "/start" },
-        "expect": [
-          {
-            "method": "sendMessage",
-            "payload": { "text": "👋 Welcome! Tap a button below to get started." }
-          }
-        ]
-      }
-    ]
-  }
+  { "name": "/start opens the GroupGuard menu", "steps": [
+    { "send": { "text": "/start" }, "expect": [
+      { "method": "sendMessage", "payload": { "text": "GroupGuard keeps your group clear and gives admins fast moderation controls." } }
+    ] }
+  ] }
 ]

@@ -1,20 +1,7 @@
 [
-  {
-    "name": "/warn",
-    "steps": [
-      {
-        "expect": [
-          {
-            "method": "sendMessage",
-            "payload": {
-              "text": "Warn a user with reason"
-            }
-          }
-        ],
-        "send": {
-          "text": "/warn"
-        }
-      }
-    ]
-  }
+  { "name": "/warn requires a group admin", "steps": [
+    { "send": { "text": "/warn @member repeated links" }, "expect": [
+      { "method": "sendMessage", "payload": { "text": "This control is available to group admins only." } }
+    ] }
+  ] }
 ]

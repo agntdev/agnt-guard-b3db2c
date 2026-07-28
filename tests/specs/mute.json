@@ -1,20 +1,7 @@
 [
-  {
-    "name": "/mute",
-    "steps": [
-      {
-        "expect": [
-          {
-            "method": "sendMessage",
-            "payload": {
-              "text": "Mute user for duration"
-            }
-          }
-        ],
-        "send": {
-          "text": "/mute"
-        }
-      }
-    ]
-  }
+  { "name": "/mute requires a group admin", "steps": [
+    { "send": { "text": "/mute @member 30m repeated links" }, "expect": [
+      { "method": "sendMessage", "payload": { "text": "This control is available to group admins only." } }
+    ] }
+  ] }
 ]

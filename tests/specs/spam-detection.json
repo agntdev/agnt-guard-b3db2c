@@ -1,0 +1,7 @@
+[
+  { "name": "ordinary private text stays quiet", "steps": [
+    { "send": { "text": "Hello everyone" }, "expect": [
+      { "method": "sendMessage", "payload": { "text": "Sorry, I didn't understand that. Try /help." } }
+    ] }
+  ] }
+]

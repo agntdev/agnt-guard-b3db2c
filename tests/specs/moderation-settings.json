@@ -1,0 +1,7 @@
+[
+  { "name": "settings button directs private users to a group", "steps": [
+    { "send": { "callback": "settings:show" }, "expect": [
+      { "method": "editMessageText", "payload": { "text": "Add GroupGuard to a group to manage its moderation settings." } }
+    ] }
+  ] }
+]
