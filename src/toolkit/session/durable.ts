@@ -144,6 +144,19 @@ export class ChatDO {
       }
     }
 
+    // Durable domain record for the group addressed by this object. The caller
+    // maintains its own indexes; this endpoint never lists stored keys.
+    if (url.pathname === "/record") {
+      if (request.method === "GET") {
+        const value = await this.state.storage.get<unknown>("record");
+        return value === undefined ? new Response(null, { status: 204 }) : Response.json(value);
+      }
+      if (request.method === "PUT") {
+        await this.state.storage.put("record", await request.json());
+        return new Response(null, { status: 204 });
+      }
+    }
+
     // Schedule a reminder + (re)arm the alarm to the earliest due one.
     if (url.pathname === "/remind" && request.method === "POST") {
       const rem = (await request.json()) as Reminder;

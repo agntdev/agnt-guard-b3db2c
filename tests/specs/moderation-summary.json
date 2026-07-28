@@ -1,0 +1,7 @@
+[
+  { "name": "report button directs private users to a group", "steps": [
+    { "send": { "callback": "report:show" }, "expect": [
+      { "method": "editMessageText", "payload": { "text": "Add GroupGuard to a group to view its moderation report." } }
+    ] }
+  ] }
+]
